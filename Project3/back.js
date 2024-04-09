@@ -15,7 +15,6 @@ const strat = function () {
 if (!IID) {
   IID = setInterval(bgcolor, 500);}
 };
-
 document.getElementById('start').addEventListener('click', strat);
 document.getElementById('stop').addEventListener('click', () => {
   clearInterval(IID);
