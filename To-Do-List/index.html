@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do_List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src=""></script>
+    <div id="bg">
+      <div id="add">
+        <label id="heading" for="list">ENTER ITEMS IN TO-DO list</label>
+        <div id="textt"></div>
+        <form>
+          <input type="text" name="Todo Text" id="text" />
+        </form>
+        <button type="submit" id="btn">ADD</button>
+        <button type="submit" id="removebtn">Remove</button>
+      </div>
+    </div>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.addEventListener('click',(e)=>{
+          e.preventDefault()
+          const item = document.querySelector('#text').value
+          const display = document.querySelector('#textt')
+          const newItem = document.createElement('h2')  ;
+      newItem.textContent = item;
+      display.appendChild(newItem)   ;
+      }
+          );
+          const removeBtn = document.getElementById('removebtn');
+    removeBtn.addEventListener('click', (e) => {
+      e.preventDefault(); 
+      const lastItem = display.lastElementChild;
+
+      if (lastItem) {
+        lastItem.remove();
+      } else {
+        alert("No items to remove!");
+      }
+      })
+    </script>
+  </body>
+</html>
